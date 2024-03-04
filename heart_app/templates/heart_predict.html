@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREDICTION OF HEART DISEASE</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+</head>
+<body>
+    <div class="container mt-5">
+
+        <h1 class="mb-4 text-center">PREDICTION OF HEART DISEASE</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="ses">BMI:</label>
+                <input type="text" class="form-control" name="bmi" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mmse">SMOKING:</label>
+                <input type="text" class="form-control" name="smoking" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cdr">ALCOHOL_DRINKING:</label>
+                <input type="text" class="form-control" name="alc" required>
+            </div>
+
+            <div class="form-group">
+                <label for="etiv">STROKE:</label>
+                <input type="text" class="form-control" name="stroke" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nwbv">PHYSICAL_HEALTH:</label>
+                <input type="text" class="form-control" name="phy" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mr">MENTAL_HEALTH:</label>
+                <input type="text" class="form-control" name="men" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">DIFFWALKING:</label>
+                <input type="text" class="form-control" name="diff" required>
+            </div>
+
+            <div class="form-group">
+                <label for="educ">SEX:</label>
+                <input type="text" class="form-control" name="sex" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ses">AGE[1-12]:</label>
+                <input type="text" class="form-control" name="age" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h2 class="mt-6 text-center">Prediction Result: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
